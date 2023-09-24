@@ -3,9 +3,12 @@ const path = require('path')
 const app = express()
 const port = 3000
 
-const customMiddleware = (req,res,next)=>{
+// const customMiddleware = (req,res,next)=>{
+//   console.log(req);
+//   next;
+// };
 
-};
+// app.use(customMiddleware);
 
 app.get('/', (req, res) => {
 //   res.json({
@@ -20,9 +23,9 @@ app.get('/hello', (req, res) => {
   res.send('Hello World ')
 })
 
-app.get('/hello/:name2', (req, res) => {
+app.get('/hello/:name', (req, res) => {
   console.log(req);
-  res.send('Hello World ' + req.params.name2)
+  res.send('Hello World - ' + req.params.name)
 })
 
 app.get('/about', (req, res) => {
